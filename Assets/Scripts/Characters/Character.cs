@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Character : MonoBehaviour,IDamagable
+public class Character : MonoBehaviour, IDamagable
 {
     public String DisplayName;
     public int currentHp;
@@ -17,10 +17,7 @@ public class Character : MonoBehaviour,IDamagable
     public event UnityAction onTakeDamage;
     public event UnityAction onHeal;
 
-    public void Die()
-    {
-       
-    }
+    public virtual void Die() { }
 
     public Team GetTeam()
     {
