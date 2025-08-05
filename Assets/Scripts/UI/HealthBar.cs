@@ -6,12 +6,19 @@ using TMPro;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Character character;
-    [SerializeField] private TextMeshProUGUI nameText;
+
     [SerializeField] private Image healthBar;
 
-    public void SetNameText(string text)
+    void OnEnable()
     {
-        nameText.text = text;
+        character.onTakeDamage += UpdateHealthBar;
+        character.onHeal += UpdateHealthBar;
+    }
+
+    void OnDisable()
+    {
+        character.onTakeDamage -= UpdateHealthBar;
+        character.onHeal -= UpdateHealthBar;
     }
 
     public void UpdateHealthBar()
