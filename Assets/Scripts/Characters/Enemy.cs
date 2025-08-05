@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : Character
+public abstract class Enemy : Character
 {
     public enum State
     {
@@ -9,25 +9,24 @@ public class Enemy : Character
         Chase
     }
 
-    private State curState;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float chaseDistance;
-    [SerializeField] private float attackDistance;
+    protected State curState;
+    [SerializeField] protected float moveSpeed;
+    [SerializeField] protected float chaseDistance;
 
 
     [Header("Components")]
     [SerializeField] private SpriteRenderer spriteRenderer;
-    private GameObject target;
+    protected GameObject target;
 
-    private float lastAttackTime;
-    private float targetDistance;
+    protected float lastAttackTime;
+    protected float targetDistance;
 
-    void Start()
+    protected virtual void Start()
     {
         target = FindAnyObjectByType<Player>().gameObject;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         spriteRenderer.flipX = getTargetDirection().x < 0;
         targetDistance = Vector2.Distance(this.gameObject.transform.position, target.transform.position);
@@ -78,7 +77,7 @@ public class Enemy : Character
         }
     }
 
-    bool canAttack()
+    protected virtual bool canAttack()
     {
         return false;
     }
@@ -89,12 +88,12 @@ public class Enemy : Character
         this.curState = newState;
     }
 
-    bool inAttackRange()
+    protected virtual bool inAttackRange()
     {
-        return targetDistance <= attackDistance;
+        return false;
     }
 
-    void attackTarget()
+    protected virtual void attackTarget()
     {
 
     }
@@ -105,12 +104,12 @@ public class Enemy : Character
         Destroy(gameObject);
     }
 
-    void dropItems()
+    protected void dropItems()
     {
 
     }
 
-    Vector2 getTargetDirection()
+    protected Vector2 getTargetDirection()
     {
         return (target.transform.position - transform.position).normalized;
     }

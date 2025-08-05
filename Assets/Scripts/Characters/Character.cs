@@ -2,16 +2,16 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Character : MonoBehaviour, IDamagable
+public abstract class Character : MonoBehaviour, IDamagable
 {
     public String DisplayName;
     public int currentHp;
     public int maxHp;
-    [SerializeField] private Team team;
+    [SerializeField] protected Team team;
 
     [Header("Audio")]
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip hitSFX;
+    [SerializeField] protected AudioSource audioSource;
+    [SerializeField] protected AudioClip hitSFX;
 
 
     public event UnityAction onTakeDamage;
@@ -24,7 +24,7 @@ public class Character : MonoBehaviour, IDamagable
         return team;
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         currentHp -= damage;
         audioSource.PlayOneShot(hitSFX);
@@ -36,7 +36,7 @@ public class Character : MonoBehaviour, IDamagable
         }
     }
 
-    public void Heal(int healAmount)
+    public virtual void Heal(int healAmount)
     {
         currentHp += healAmount;
         currentHp = Math.Min(currentHp, maxHp);
