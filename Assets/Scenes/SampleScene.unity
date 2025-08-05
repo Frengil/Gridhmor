@@ -352,7 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 912590913}
-  - component: {fileID: 912590912}
+  - component: {fileID: 912590914}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -360,28 +360,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &912590912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912590911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e707e51c29df32c4d99dee14007b269e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DisplayName: Enemy
-  currentHp: 10
-  maxHp: 10
-  team: 1
-  audioSource: {fileID: 1284624033}
-  hitSFX: {fileID: 8300000, guid: 34c86eec38acab945a0683bc0c742f8c, type: 3}
-  moveSpeed: 1
-  chaseDistance: 4
-  attackDistance: 0.5
-  spriteRenderer: {fileID: 1284624035}
 --- !u!4 &912590913
 Transform:
   m_ObjectHideFlags: 0
@@ -398,6 +376,30 @@ Transform:
   - {fileID: 1284624032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &912590914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912590911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd9475f6834eda47bc1c02e68b29bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Melee Enemy
+  currentHp: 10
+  maxHp: 10
+  team: 1
+  audioSource: {fileID: 1284624033}
+  hitSFX: {fileID: 8300000, guid: 34c86eec38acab945a0683bc0c742f8c, type: 3}
+  moveSpeed: 1
+  chaseDistance: 4
+  spriteRenderer: {fileID: 1284624035}
+  damage: 5
+  attackRange: 0.5
+  attackRate: 1
 --- !u!1 &941025749
 GameObject:
   m_ObjectHideFlags: 0

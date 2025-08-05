@@ -3,8 +3,8 @@ using UnityEngine;
 public class MeleeEnemy : Enemy
 {
     [SerializeField] private int damage;
-    [SerializeField] private int attackRange;
-    [SerializeField] private int attackRate;
+    [SerializeField] private float attackRange;
+    [SerializeField] private float attackRate;
 
     protected override void attackTarget()
     {
