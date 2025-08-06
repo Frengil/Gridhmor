@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde01e83251a00447a689646dbe068b5, type: 3}
   m_Name: OneHandedSword
   m_EditorClassIdentifier: 
-  DisplayName: 
+  DisplayName: 1-Handed Sword
   Description: 
-  icon: {fileID: 0}
+  icon: {fileID: 1674804629613845060, guid: 7205ba68af5e57c45a7a80dadc4861e7, type: 3}
   MaxStackSize: 1
   EquipPrefab: {fileID: 0}
-  maxDamage: 0
-  minDamage: 0
-  range: 0
-  attackRate: 0
+  maxDamage: 5
+  minDamage: 2
+  range: 1.2
+  attackRate: 0.4
   projectilePrefab: {fileID: 0}

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde01e83251a00447a689646dbe068b5, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
-  DisplayName: 
+  DisplayName: Bow
   Description: 
-  icon: {fileID: 0}
+  icon: {fileID: 4392768792881968788, guid: d54ccba32f62a88469c5d9ab79d15b86, type: 3}
   MaxStackSize: 1
   EquipPrefab: {fileID: 0}
-  maxDamage: 0
-  minDamage: 0
-  range: 0
-  attackRate: 0
+  maxDamage: 5
+  minDamage: 1
+  range: 2
+  attackRate: 1
   projectilePrefab: {fileID: 0}
