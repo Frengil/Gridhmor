@@ -4,7 +4,7 @@ public class MeleeEquipItem : EquipItem
 {
     [SerializeField] private LayerMask hitLayerMask;
     [SerializeField] private Animator anim;
-    [SerializeField] private Transform muzzle;
+    private Transform muzzle;
 
     private float lastAttackTime;
 

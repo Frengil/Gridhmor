@@ -9,10 +9,18 @@ public class EquipController : MonoBehaviour
 
     private bool useLeftHand;
 
+
+    [SerializeField] private ItemData testEquipItem;
+
     [Header("Components")]
     [SerializeField] private Transform leftHandItemOrigin;
     [SerializeField] private MouseUtilities mouseUtils;
 
+
+    void Start()
+    {
+        EquipLeftHand(testEquipItem);
+    }
     void Update()
     {
         Vector2 mouseDir = mouseUtils.getMouseDirection(transform.position);
@@ -22,7 +30,7 @@ public class EquipController : MonoBehaviour
         {
             if (useLeftHand && !EventSystem.current.IsPointerOverGameObject())
             {
-                leftHandItem.onUse(); 
+                leftHandItem.onUse();
             }
         }
     }

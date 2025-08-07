@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: 
   icon: {fileID: 1674804629613845060, guid: 7205ba68af5e57c45a7a80dadc4861e7, type: 3}
   MaxStackSize: 1
-  EquipPrefab: {fileID: 0}
+  EquipPrefab: {fileID: 5050941190304456582, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
   maxDamage: 5
   minDamage: 2
   range: 1.2
