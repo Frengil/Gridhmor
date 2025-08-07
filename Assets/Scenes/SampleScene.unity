@@ -859,6 +859,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 912590913}
     m_Modifications:
+    - target: {fileID: 1169662885118668382, guid: c6533fecebee53944b674b628a47f5de, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1354779604789524294, guid: c6533fecebee53944b674b628a47f5de, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -947,9 +951,17 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 912590914}
+    - target: {fileID: 2627235657384478054, guid: c6533fecebee53944b674b628a47f5de, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5622050636896633476, guid: c6533fecebee53944b674b628a47f5de, type: 3}
       propertyPath: m_Name
       value: HealthbarCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622050636896633476, guid: c6533fecebee53944b674b628a47f5de, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1105,7 +1117,8 @@ GameObject:
   m_Component:
   - component: {fileID: 912590913}
   - component: {fileID: 912590914}
-  m_Layer: 0
+  - component: {fileID: 912590915}
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1153,6 +1166,43 @@ MonoBehaviour:
   damage: 5
   attackRange: 1
   attackRate: 1
+--- !u!70 &912590915
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912590911}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.007615447, y: 0}
+  m_Size: {x: 0.68276906, y: 1}
+  m_Direction: 0
 --- !u!224 &936098650 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1790117428020225750, guid: c6533fecebee53944b674b628a47f5de, type: 3}
@@ -1223,7 +1273,19 @@ MonoBehaviour:
     m_ActionId: eb95b007-ef01-4197-a487-4fd2addec11f
     m_ActionName: 'Main/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1530769526}
+        m_TargetAssemblyTypeName: EquipController, Assembly-CSharp
+        m_MethodName: OnUseInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2812ac72-2f9b-46a4-89c6-4f2e3114223d
     m_ActionName: 'Main/Attack[/Mouse/leftButton]'
   m_NeverAutoSwitchControlSchemes: 0
@@ -1457,72 +1519,6 @@ MonoBehaviour:
   team: 0
   audioSource: {fileID: 941025756}
   hitSFX: {fileID: 8300000, guid: 34c86eec38acab945a0683bc0c742f8c, type: 3}
---- !u!1001 &1238826795
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1635818581}
-    m_Modifications:
-    - target: {fileID: 4326092048801357438, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4326092048801357438, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4326092048801357438, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4326092048801357438, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999809
-      objectReference: {fileID: 0}
-    - target: {fileID: 4326092048801357438, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4326092048801357438, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4326092048801357438, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.00617454
-      objectReference: {fileID: 0}
-    - target: {fileID: 4326092048801357438, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4326092048801357438, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4326092048801357438, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.708
-      objectReference: {fileID: 0}
-    - target: {fileID: 5050941190304456582, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
-      propertyPath: m_Name
-      value: EquipItem_OneHandedSword
-      objectReference: {fileID: 0}
-    - target: {fileID: 5304266212559404263, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: cd6db9737fdb44745b36bdb7eca720fb, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
---- !u!4 &1238826796 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4326092048801357438, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
-  m_PrefabInstance: {fileID: 1238826795}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1284624031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,9 +1529,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1284624032}
   - component: {fileID: 1284624035}
-  - component: {fileID: 1284624034}
   - component: {fileID: 1284624033}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1654,43 +1649,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!70 &1284624034
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284624031}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.0141711235, y: -0.0047237873}
-  m_Size: {x: 0.7777934, y: 1.0445054}
-  m_Direction: 0
 --- !u!212 &1284624035
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2085,14 +2043,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635818580}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.0042493725, w: 0.999991}
-  m_LocalPosition: {x: 0.004, y: 0.439, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0026106318, w: 0.9999966}
+  m_LocalPosition: {x: 0.0023535914, y: 0.43898904, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1238826796}
+  m_Children: []
   m_Father: {fileID: 1530769525}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.487}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.299}
 --- !u!1 &1696295816
 GameObject:
   m_ObjectHideFlags: 0
