@@ -39,12 +39,42 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(ItemData item)
     {
+        ItemSlot slot = findSlotWithItem(item);
+        if (slot != null)
+        {
+            slot.quantity++;
+            //Update UI
+            return;
+        }
 
+        slot = getEmptySlot();
+        if (slot != null)
+        {
+            slot.item = item;
+            slot.quantity = 1;
+        }
+        else
+        {
+            //Iventory is full
+        }
+        //Update UI
     }
 
     public void RemoveItem(ItemSlot slot)
     {
+        if (slot == null)
+        {
+            return;
+        }
 
+        slot.quantity--;
+        if (slot.quantity <= 0)
+        {
+            slot.item = null;
+            slot.quantity = 0;
+        }
+
+        //Update UI
     }
 
     ItemSlot findSlotWithItem(ItemData item)
@@ -73,11 +103,26 @@ public class Inventory : MonoBehaviour
 
     public void useItem(ItemSlot slot)
     {
+        if (slot.item == null)
+        {
+            return;
+        }
 
+        if (slot.item is WeaponData)
+        {
+            Player.instance.equipController.EquipLeftHand(slot.item);
+        }
     }
 
     public bool hasItem(ItemData item)
     {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i] != null && slots[i].item == item && slots[i].quantity > 0)
+            {
+                return true;
+            }
+        }
         return false;
     }
 }
