@@ -1,16 +1,29 @@
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.EventSystems;
 public class InventorySlotUI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Image icon;
+    [SerializeField] private TextMeshProUGUI quantityText;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private ItemSlot itemSlot;
+
+    public void setItemSlot(ItemSlot slot)
+    {     
+        this.itemSlot = slot;
+        if (itemSlot.item == null)
+        {
+            icon.enabled = false;
+            quantityText.text = "";
+
+        }
+        else
+        {
+            icon.enabled = true;
+
+            icon.sprite = slot.item.icon;
+            quantityText.text = slot.quantity > 1 ? slot.quantity.ToString() : "";
+        }
     }
 }

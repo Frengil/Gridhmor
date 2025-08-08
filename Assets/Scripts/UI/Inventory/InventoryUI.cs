@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private InventorySlotUI[] slots;
+    [SerializeField] public ItemToolTipUI toolTip;
 
-    // Update is called once per frame
-    void Update()
+
+    public void updateUI(ItemSlot[] itemSlots)
     {
-        
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].setItemSlot(itemSlots[i]);
+        }
     }
 }

@@ -32,7 +32,7 @@ public class Inventory : MonoBehaviour
         }
 
         for (int i = 0; i < starterItems.Length; i++)
-        {
+        {           
             AddItem(starterItems[i]);
         }
     }
@@ -43,7 +43,7 @@ public class Inventory : MonoBehaviour
         if (slot != null)
         {
             slot.quantity++;
-            //Update UI
+            inventoryUI.updateUI(slots);
             return;
         }
 
@@ -57,7 +57,7 @@ public class Inventory : MonoBehaviour
         {
             //Iventory is full
         }
-        //Update UI
+        inventoryUI.updateUI(slots);
     }
 
     public void RemoveItem(ItemSlot slot)
@@ -74,14 +74,14 @@ public class Inventory : MonoBehaviour
             slot.quantity = 0;
         }
 
-        //Update UI
+        inventoryUI.updateUI(slots);
     }
 
     ItemSlot findSlotWithItem(ItemData item)
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            if (slots[i] != null && slots[i].item == item && slots[i].item.MaxStackSize <= slots[i].quantity)
+            if (slots[i] != null && slots[i].item == item && slots[i].item.MaxStackSize < slots[i].quantity)
             {
                 return slots[i];
             }
@@ -93,7 +93,7 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            if (slots[i] == null)
+            if (slots[i].item == null)
             {
                 return slots[i];
             }
