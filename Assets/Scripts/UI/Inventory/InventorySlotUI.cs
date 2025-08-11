@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
-public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
+public class InventorySlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Image icon;
     [SerializeField] private TextMeshProUGUI quantityText;
@@ -15,6 +15,20 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
         {
             Inventory.instance.useItem(itemSlot);
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (itemSlot != null && itemSlot.item != null)
+        {
+           
+            Inventory.instance.inventoryUI.toolTip.enableToolTip(itemSlot.item);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Inventory.instance.inventoryUI.toolTip.disableToolTip();
     }
 
     public void setItemSlot(ItemSlot slot)
