@@ -76,7 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnForce: 3
   sprite: {fileID: 1082725792949593549}
-  pickUpSFX: {fileID: 0}
+  pickUpSFX: {fileID: 8300000, guid: 6c0405671a436594599b12222d7ff9e4, type: 3}
 --- !u!58 &9106945022543952090
 CircleCollider2D:
   m_ObjectHideFlags: 0
