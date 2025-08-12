@@ -21,4 +21,6 @@ MonoBehaviour:
   minDamage: 2
   range: 10
   attackRate: 0.4
-  projectilePrefab: {fileID: 0}
+  projectileLifeTime: 0.2
+  projectileSpeed: 3
+  projectilePrefab: {fileID: 3476277556658244485, guid: e762b98da39e5e346825068fd9c7e114, type: 3}

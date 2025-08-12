@@ -8,6 +8,8 @@ public class WeaponData : ItemData
     public float minDamage;
     public float range;
     public float attackRate;
+    public float projectileLifeTime;
+    public float projectileSpeed;
 
     public GameObject projectilePrefab;
 

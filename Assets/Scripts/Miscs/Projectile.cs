@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private int damage;
+    private int minDamage;
+    private int maxDamage;
     private float speed;
-    private float lifetime;
 
     private Character.Team team;
     private Rigidbody2D rb;
@@ -21,7 +21,8 @@ public class Projectile : MonoBehaviour
 
     public void initProjectile(
         Character.Team team,
-        int damage,
+        int minDamage,
+        int maxDamage,
         float lifetime,
         float speed
         )
@@ -29,7 +30,8 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, lifetime);
         this.speed = speed;
         this.team = team;
-        this.damage = damage;
+        this.minDamage = minDamage;
+        this.maxDamage = maxDamage;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -38,6 +40,8 @@ public class Projectile : MonoBehaviour
 
         if (damagable != null && damagable.GetTeam() != this.team)
         {
+
+            int damage = Random.Range(0, this.maxDamage - this.minDamage) + this.minDamage;
             damagable.TakeDamage(damage);
 
         }

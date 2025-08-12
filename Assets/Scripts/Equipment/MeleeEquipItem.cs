@@ -19,20 +19,16 @@ public class MeleeEquipItem : EquipItem
         }
 
         lastAttackTime = Time.time;
-       
+
         anim.SetTrigger("Attack");
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, i.range, hitLayerMask);
-        if (hit.collider != null)
-        {
-
-            IDamagable damagable = hit.collider.GetComponent<IDamagable>();
-            if (damagable != null)
-            {
-                int damage = (int)Random.Range(0, i.maxDamage - i.minDamage) + (int)i.minDamage; 
-                damagable.TakeDamage(damage);
-            }
-        }
-        //Raycast or in my case add a swoosh projectile
+        GameObject projectile = Instantiate(i.projectilePrefab, transform.position, transform.rotation);
+        projectile.GetComponent<Projectile>().initProjectile(
+            Character.Team.Player,
+          (int)i.minDamage,
+          (int)i.maxDamage,
+           i.projectileLifeTime,
+           i.projectileSpeed
+            );
     }
 }
