@@ -13,6 +13,9 @@ public abstract class Enemy : Character
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float chaseDistance;
 
+    [SerializeField] protected ItemData[] dropableItems;
+    [SerializeField] protected GameObject dropItemPrefab;
+
 
     [Header("Components")]
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -106,7 +109,11 @@ public abstract class Enemy : Character
 
     protected void dropItems()
     {
-
+        for (int i = 0; i < dropableItems.Length; i++)
+        {
+            GameObject o = Instantiate(dropItemPrefab, transform.position, Quaternion.identity);
+            o.GetComponent<WorldItem>().setItem(dropableItems[i]);
+        }
     }
 
     protected Vector2 getTargetDirection()
