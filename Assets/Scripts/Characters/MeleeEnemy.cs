@@ -13,6 +13,8 @@ public class MeleeEnemy : Enemy
         {
             damagable.TakeDamage(damage);
         }
+        //For later use
+        Quaternion rotationToTarget = Quaternion.FromToRotation(transform.up, getTargetDirection());
     }
 
     protected override bool canAttack()
