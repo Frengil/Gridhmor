@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MeleeEquipItem : EquipItem
@@ -7,6 +8,7 @@ public class MeleeEquipItem : EquipItem
     private Transform muzzle;
 
     private float lastAttackTime;
+
 
     [SerializeField] private AudioClip audioSFX;
 
@@ -19,8 +21,8 @@ public class MeleeEquipItem : EquipItem
         }
 
         lastAttackTime = Time.time;
-
-        anim.SetTrigger("Attack");
+        
+        anim.SetTrigger("Attack");      
 
         GameObject projectile = Instantiate(i.projectilePrefab, transform.position, transform.rotation);
         projectile.GetComponent<Projectile>().initProjectile(
