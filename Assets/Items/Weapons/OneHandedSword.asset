@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: OneHandedSword
   m_EditorClassIdentifier: 
   DisplayName: 1-Handed Sword
-  Description: 
+  Description: This perfectly balanced sword lets out a quiet whistle with every
+    swing.
   icon: {fileID: 1674804629613845060, guid: 7205ba68af5e57c45a7a80dadc4861e7, type: 3}
   MaxStackSize: 1
   EquipPrefab: {fileID: 5050941190304456582, guid: 86c5b1ef6efa2fc4c8a5943b821fdde1, type: 3}
@@ -23,4 +24,9 @@ MonoBehaviour:
   attackRate: 0.4
   projectileLifeTime: 0.1
   projectileSpeed: 6
+  weaponLevel: 0
+  enchantments:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   projectilePrefab: {fileID: 3476277556658244485, guid: e762b98da39e5e346825068fd9c7e114, type: 3}
