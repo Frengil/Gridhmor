@@ -5150,6 +5150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 145011e997cfcd74f843efee9295f093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropableItems:
+  - {fileID: 11400000, guid: 8c03aaaef1d7c0a42af28c52172d8114, type: 2}
+  dropItemPrefab: {fileID: 3555262209699426317, guid: d806b2b79c946754abc4148ea6bcfd4e, type: 3}
+  levelController: {fileID: 1910938883}
 --- !u!114 &1910938886
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,10 +13,6 @@ public abstract class Enemy : Character
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float chaseDistance;
 
-    [SerializeField] protected ItemData[] dropableItems;
-    [SerializeField] protected GameObject dropItemPrefab;
-
-
     [Header("Components")]
     [SerializeField] private SpriteRenderer spriteRenderer;
     protected GameObject target;
@@ -43,7 +39,7 @@ public abstract class Enemy : Character
 
     public void setDifficultyOfEnemy(int difficulty)
     {
-        
+
     }
 
     void IdleUdate()
@@ -114,11 +110,7 @@ public abstract class Enemy : Character
 
     protected void dropItems()
     {
-        for (int i = 0; i < dropableItems.Length; i++)
-        {
-            GameObject o = Instantiate(dropItemPrefab, transform.position, Quaternion.identity);
-            o.GetComponent<WorldItem>().setItem(dropableItems[i]);
-        }
+        LootController.instance.createLoot(this);
     }
 
     protected Vector2 getTargetDirection()
