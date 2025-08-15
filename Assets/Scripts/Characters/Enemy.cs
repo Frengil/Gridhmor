@@ -41,6 +41,11 @@ public abstract class Enemy : Character
         }
     }
 
+    public void setDifficultyOfEnemy(int difficulty)
+    {
+        
+    }
+
     void IdleUdate()
     {
         if (targetDistance < chaseDistance)
