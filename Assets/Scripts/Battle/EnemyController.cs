@@ -5,23 +5,32 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private Enemy[] enemyPrefabs;
 
-    public void createEnemy(int id)
+    public void createSingleEnemy(int id, Vector2 startingPosition)
     {
         int difficulty = LevelController.instance.levelDifficulty;
-        int enemyId = 0;
-        Vector3 position = new Vector3(Random.Range(-13f, 13f), Random.Range(-13f, 13f), 0);
 
-        Enemy enemyGo = Instantiate(enemyPrefabs[enemyId], position, Quaternion.identity);
+
+        Enemy enemyGo = Instantiate(enemyPrefabs[id], startingPosition, Quaternion.identity);
 
 
         enemyGo.setDifficultyOfEnemy(difficulty);
     }
 
+    public void createEnemyGroup(int amount)
+    {
+        Vector2 position = new Vector2(Random.Range(-10f, 10f), Random.Range(-10f, 10f));
+        for (int i = 0; i < amount; i++)
+        {
+            Vector2 startingPosVariance = new Vector2(Random.Range(-3f, 3f), Random.Range(-3f, 3f));
+            createSingleEnemy(0, position + startingPosVariance);
+        }
+    }
+
     void Start()
     {
-        createEnemy(0);
-        createEnemy(0);
-        createEnemy(0);
+        createEnemyGroup(5);
+        createEnemyGroup(5);
+        createEnemyGroup(5);
     }
 
     void Update()
