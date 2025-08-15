@@ -4,13 +4,14 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private Enemy[] enemyPrefabs;
+    [SerializeField] private Transform enemyContainer;
 
     public void createSingleEnemy(int id, Vector2 startingPosition)
     {
         int difficulty = LevelController.instance.levelDifficulty;
 
 
-        Enemy enemyGo = Instantiate(enemyPrefabs[id], startingPosition, Quaternion.identity);
+        Enemy enemyGo = Instantiate(enemyPrefabs[id], startingPosition, Quaternion.identity,enemyContainer);
 
 
         enemyGo.setDifficultyOfEnemy(difficulty);
