@@ -17,6 +17,7 @@ public class LootController : MonoBehaviour
     }
     [SerializeField] protected ItemData[] dropableItems;
     [SerializeField] protected GameObject dropItemPrefab;
+    [SerializeField] protected GameObject goldItemPrefab;   
 
     [SerializeField] private LevelController levelController;
     public void createLoot(Enemy enemy)
@@ -25,6 +26,15 @@ public class LootController : MonoBehaviour
         {
             GameObject o = Instantiate(dropItemPrefab, enemy.gameObject.transform.position, Quaternion.identity);
             o.GetComponent<WorldItem>().setItem(dropableItems[i]);
+        }
+    }
+
+    public void createGoldLoot(int amount, Transform position)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            GameObject o = Instantiate(goldItemPrefab, position.position, Quaternion.identity);
+
         }
     }
 }

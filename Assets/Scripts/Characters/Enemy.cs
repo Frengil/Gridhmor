@@ -12,6 +12,7 @@ public abstract class Enemy : Character
     protected State curState;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float chaseDistance;
+    [SerializeField] protected int goldAmountToDrop;
 
     [Header("Components")]
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -110,7 +111,9 @@ public abstract class Enemy : Character
 
     protected void dropItems()
     {
+        LootController.instance.createGoldLoot(this.goldAmountToDrop, this.transform);
         LootController.instance.createLoot(this);
+
     }
 
     protected Vector2 getTargetDirection()

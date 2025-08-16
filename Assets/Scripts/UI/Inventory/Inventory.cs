@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
     public InventoryUI inventoryUI;
 
     public static Inventory instance;
+    public int gold;
 
     void Awake()
     {
@@ -32,9 +33,14 @@ public class Inventory : MonoBehaviour
         }
 
         for (int i = 0; i < starterItems.Length; i++)
-        {           
+        {
             AddItem(starterItems[i]);
         }
+    }
+
+    public void addGold(int amount)
+    {
+        gold += amount;
     }
 
     public void AddItem(ItemData item)

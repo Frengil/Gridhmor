@@ -241,10 +241,7 @@ MonoBehaviour:
   hitSFX: {fileID: 8300000, guid: 34c86eec38acab945a0683bc0c742f8c, type: 3}
   moveSpeed: 1
   chaseDistance: 4
-  dropableItems:
-  - {fileID: 11400000, guid: 7d95e147889c19f4db6dd97011782bc3, type: 2}
-  - {fileID: 11400000, guid: 7d95e147889c19f4db6dd97011782bc3, type: 2}
-  dropItemPrefab: {fileID: 3555262209699426317, guid: d806b2b79c946754abc4148ea6bcfd4e, type: 3}
+  goldAmountToDrop: 10
   spriteRenderer: {fileID: 297956079065585742}
   damage: 5
   attackRange: 1
