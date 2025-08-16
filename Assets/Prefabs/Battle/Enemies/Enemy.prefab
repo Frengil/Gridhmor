@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2055176493
+  m_SortingLayerID: 1149179711
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -9097720764886040989, guid: 9c530141d69a4a540908c2f46666bc89, type: 3}
@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 1898404574492634762}
   - component: {fileID: 7940238102633792170}
   - component: {fileID: 4394016505594720472}
+  - component: {fileID: 5649791493267496984}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -310,6 +311,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5649791493267496984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3479750160809640278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0f71ba7e3050d4a9ccf68aa55f1438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 297956079065585742}
+  shift: 25
 --- !u!1001 &4692783939086754659
 PrefabInstance:
   m_ObjectHideFlags: 0

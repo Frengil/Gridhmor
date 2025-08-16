@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 moveInput;
 
+    public int sortingOrder { private set; get; }
+
 
     void Update()
     {
@@ -20,7 +22,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 velocity = moveInput * moveSpeed;
         rig.linearVelocity = velocity;
-        spriteRenderer.sortingOrder = (int)(-transform.position.y*1000);
+        sortingOrder = (int)(-transform.position.y * 1000);
+        spriteRenderer.sortingOrder = sortingOrder;
     }
 
     public void onMoveInput(InputAction.CallbackContext context)

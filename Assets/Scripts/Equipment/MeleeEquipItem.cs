@@ -7,6 +7,7 @@ public class MeleeEquipItem : EquipItem
     [SerializeField] private Animator anim;
     private Transform muzzle;
 
+    [SerializeField] private SpriteRenderer spriteRenderer;
     private float lastAttackTime;
 
 
@@ -21,8 +22,8 @@ public class MeleeEquipItem : EquipItem
         }
 
         lastAttackTime = Time.time;
-        
-        anim.SetTrigger("Attack");      
+
+        anim.SetTrigger("Attack");
 
         GameObject projectile = Instantiate(i.projectilePrefab, transform.position, transform.rotation);
         projectile.GetComponent<Projectile>().initProjectile(
@@ -32,5 +33,10 @@ public class MeleeEquipItem : EquipItem
            i.projectileLifeTime,
            i.projectileSpeed
             );
+    }
+
+    void FixedUpdate()
+    {
+        spriteRenderer.sortingOrder = Player.instance.GetComponent<PlayerController>().sortingOrder;
     }
 }
