@@ -44,14 +44,14 @@ TagManager:
   - name: BG
     uniqueID: 507137787
     locked: 0
-  - name: Object
-    uniqueID: 2619057351
-    locked: 0
   - name: Enemy
     uniqueID: 2055176493
     locked: 0
   - name: Player
     uniqueID: 1149179711
+    locked: 0
+  - name: Object
+    uniqueID: 2619057351
     locked: 0
   - name: Projectiles
     uniqueID: 1472342129

@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 4326092048801357438}
   - component: {fileID: 4074262310842881796}
   - component: {fileID: 5304266212559404263}
+  - component: {fileID: 4495947328613982606}
   m_Layer: 0
   m_Name: EquipItem_OneHandedSword
   m_TagString: Untagged
@@ -161,3 +162,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4495947328613982606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5050941190304456582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0f71ba7e3050d4a9ccf68aa55f1438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 6676603607835110643}
+  shift: 1000
